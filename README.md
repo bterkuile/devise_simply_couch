@@ -1,48 +1,33 @@
-devise_simply_couch
-=========================
+# devise_simply_couch
 
-add it to your Gemfile:
+Devise ORM adapter for [SimplyCouch](https://github.com/bterkuile/simply_couch).
+
+## Installation
+
 ```ruby
 gem 'devise_simply_couch'
 ```
 
-to use in your model:
+## Usage
+
 ```ruby
 class User
   include SimplyCouch::Model
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
 end
 ```
 
-== Devise version warning!!
-devise_simply_couch up till 0.0.3 works with devise 2.0.4. Since version 0.1.0 it is tested against devise 3.1.0. This is 
-breaking upgrade since devise has changed a lot since this version.
-A typical Gemfile from version 0.1.0 looks like:
-```ruby
-gem 'couch_potato' , github: 'bterkuile/couch_potato'
-gem 'simply_couch' , github: 'bterkuile/simply_couch'
-gem 'orm_adapter', github: 'bterkuile/orm_adapter'
-gem 'devise', '>= 3.1.0'
-gem 'devise_simply_couch' '>= 0.1.0'
-```
+The gem automatically declares CouchDB properties for each Devise module
+(encrypted_password, reset_password_token, etc.) — no manual `property` declarations needed.
 
-Note that orm_adapter is a modified version
+## Dependencies
 
-Note on Patches/Pull Requests
-----------------------------------
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+- [simply_couch](https://github.com/bterkuile/simply_couch)
+- [devise](https://github.com/heartcombo/devise)
+- [orm_adapter](https://github.com/ianwhite/orm_adapter)
 
-Copyright
------------------
+## License
 
 Copyright (c) 2012 Benjamin ter Kuile. See LICENSE for details.
