@@ -1,15 +1,15 @@
-devise_simply_stored
+devise_simply_couch
 =========================
 
 add it to your Gemfile:
 ```ruby
-gem 'devise_simply_stored'
+gem 'devise_simply_couch'
 ```
 
 to use in your model:
 ```ruby
 class User
-  include SimplyStored::Couch
+  include SimplyCouch::Model
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -18,15 +18,15 @@ end
 ```
 
 == Devise version warning!!
-devise_simply_stored up till 0.0.3 works with devise 2.0.4. Since version 0.1.0 it is tested against devise 3.1.0. This is 
+devise_simply_couch up till 0.0.3 works with devise 2.0.4. Since version 0.1.0 it is tested against devise 3.1.0. This is 
 breaking upgrade since devise has changed a lot since this version.
 A typical Gemfile from version 0.1.0 looks like:
 ```ruby
 gem 'couch_potato' , github: 'bterkuile/couch_potato'
-gem 'simply_stored' , github: 'bterkuile/simply_stored'
+gem 'simply_couch' , github: 'bterkuile/simply_couch'
 gem 'orm_adapter', github: 'bterkuile/orm_adapter'
 gem 'devise', '>= 3.1.0'
-gem 'devise_simply_stored' '>= 0.1.0'
+gem 'devise_simply_couch' '>= 0.1.0'
 ```
 
 Note that orm_adapter is a modified version

@@ -1,7 +1,7 @@
-require 'simply_stored'
+require 'simply_couch'
 require 'orm_adapter'
-module SimplyStored
-  module Couch
+module SimplyCouch
+  module Model
     module ClassMethods
       include ::OrmAdapter::ToAdapter
     end

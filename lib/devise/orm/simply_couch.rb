@@ -1,7 +1,7 @@
 require 'devise'
-require 'orm_adapter/adapters/simply_stored'
-SimplyStored::Couch::ClassMethods.send :include, Devise::Models
-module SimplyStored::DeviseSchema
+require 'orm_adapter/adapters/simply_couch'
+SimplyCouch::Model::ClassMethods.send :include, Devise::Models
+module SimplyCouch::DeviseSchema
   SCHEMA_DEVS = {
     database_authenticatable: ->{
       property :encrypted_password, type: String, default: ""
@@ -45,4 +45,4 @@ module SimplyStored::DeviseSchema
     end
   end
 end
-SimplyStored::Couch::ClassMethods.send :include, SimplyStored::DeviseSchema
+SimplyCouch::Model::ClassMethods.send :include, SimplyCouch::DeviseSchema

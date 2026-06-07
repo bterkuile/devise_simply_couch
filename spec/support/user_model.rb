@@ -1,5 +1,5 @@
 class User
-  include SimplyStored::Couch
+  include SimplyCouch::Model
 
   devise :database_authenticatable, :recoverable, :rememberable, :trackable
 end

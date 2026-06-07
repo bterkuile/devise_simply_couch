@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
-require 'devise_simply_stored'
+require 'devise_simply_couch'
 Bundler.require
 require 'pry'
 
